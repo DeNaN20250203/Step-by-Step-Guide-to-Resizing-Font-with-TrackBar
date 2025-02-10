@@ -2,7 +2,6 @@ namespace Change_Label_Font_Size_Using_TrackBar_001
 {
 	public partial class Form1 : Form
 	{
-		// https://youtu.be/tDC6CsleQGg
 		public Form1()
 		{
 			InitializeComponent();
@@ -27,16 +26,16 @@ namespace Change_Label_Font_Size_Using_TrackBar_001
 
 		private void btnSelectFont_Click(object sender, EventArgs e)
 		{
-			// Ñîçäàåì ýêçåìïëÿð FontDialog
+			// Ð¡Ð¾Ð·Ð´Ð°ÐµÐ¼ ÑÐºÐ·ÐµÐ¼Ð¿Ð»ÑÑ€ FontDialog
 			using (FontDialog fontDialog = new FontDialog())
 			{
-				// Óñòàíàâëèâàåì øðèôò ïî óìîë÷àíèþ
+				// Ð£ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÐ¼ ÑˆÑ€Ð¸Ñ„Ñ‚ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ
 				fontDialog.Font = new Font("JetBrains Mono", (int)lbl_MSG.Font.Size, FontStyle.Regular);
 
-				// Îòêðûâàåì äèàëîã âûáîðà øðèôòà
+				// ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ð´Ð¸Ð°Ð»Ð¾Ð³ Ð²Ñ‹Ð±Ð¾Ñ€Ð° ÑˆÑ€Ð¸Ñ„Ñ‚Ð°
 				if (fontDialog.ShowDialog() == DialogResult.OK)
 				{
-					// Ïðèìåíÿåì âûáðàííûé øðèôò ê label
+					// ÐŸÑ€Ð¸Ð¼ÐµÐ½ÑÐµÐ¼ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ñ‹Ð¹ ÑˆÑ€Ð¸Ñ„Ñ‚ Ðº label
 					lbl_MSG.Font = fontDialog.Font;
 					lbl_MSG.Text = (int)lbl_MSG.Font.Size + " |=> " + lbl_MSG.Font.FontFamily.Name.ToString();
 					trackBar1.Value = (int)lbl_MSG.Font.Size;
